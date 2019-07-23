@@ -1,0 +1,87 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="show_pfp_outside_form" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="start_in_non_tile_mode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="color_tiles_by_manifest" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="tilecolor_appname" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;PowerPoint&lt;/string&gt;
+  &lt;string&gt;Word&lt;/string&gt;
+  &lt;string&gt;Excel&lt;/string&gt;
+  &lt;string&gt;OneNote&lt;/string&gt;
+  &lt;string&gt;Microsoft Edge&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="tilecolor_corresp_color" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;default&lt;/string&gt;
+  &lt;string&gt;default&lt;/string&gt;
+  &lt;string&gt;default&lt;/string&gt;
+  &lt;string&gt;default&lt;/string&gt;
+  &lt;string&gt;default&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="round_edges" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="flags_info" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Experimental Feature Flags
+
+show_pfp_outside_form =&gt; displays the profile picture sticking out of the top of the form.
+default value = False
+
+start_in_non_tile_mode =&gt; removes the tile view section from the form.
+default value = False
+
+color_tiles_by_manifest =&gt; colors the tiles based on user and some prefab schemes.
+default value = False
+
+round_edges =&gt; makes the edges in and of the app rounded. Disable for slower systems.
+default value = True
+
+round_allapps_list =&gt; controls the display of round borders for just the all apps list. Disabled
+by default for increased performance without compromising visual appeal.
+
+startmenu_backimg_location =&gt; Sets a background image for the start menu. Works only
+when start_in_non_tile_mode is True. May reduce performance on slow systems.
+
+openclose_animation =&gt; Suble fade-in and fade-out animation for the form when launching
+and closing, Disable for better performance, but may result in an abrupt experience.
+
+transparent =&gt; Enables/Disables transparency. Disabling may improve performance on slower
+systems.
+default value = True
+
+_____________________________________________________________________
+
+Tile Color Settings ( used if color_tiles_by_manifest is True )
+
+tilecolor_appname =&gt; list of appnames in defined order
+
+tilecolor_corresp_color =&gt; list of tile colors of corresponding app
+</Value>
+    </Setting>
+    <Setting Name="round_allapps_list" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="startmenu_backimg_location" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="openclose_animation" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="transparent" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
