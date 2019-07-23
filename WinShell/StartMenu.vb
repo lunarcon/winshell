@@ -128,6 +128,19 @@ Public Class StartMenu
         Me.Controls.Add(at)
         AddHandler pin.Click, AddressOf pinunpin
         roundthethingy(at, 10)
+        If My.Settings.show_pfp_outside_form = True And My.Settings.start_in_non_tile_mode = True Then
+            Panel5.Visible = True
+            TransparencyKey = Color.Black
+            Dim p As New Drawing2D.GraphicsPath()
+            p.StartFigure()
+            p.AddArc(New Rectangle(0, 0, 20, 20), 180, 90)
+            p.AddLine(20, 0, Panel6.Width - 20, 0)
+            p.AddArc(New Rectangle(Panel6.Width - 20, 0, 20, 20), -90, 90)
+            p.AddLine(Panel6.Width, 0, Panel6.Width, Panel6.Height)
+            p.AddLine(Panel6.Width, Panel6.Height, 0, Panel6.Height)
+            p.CloseFigure()
+            Panel6.Region = New Region(p)
+        End If
     End Sub
 
     Private Sub ShowOptions(sender As Object, e As System.Windows.Forms.MouseEventArgs)
@@ -349,38 +362,40 @@ Public Class StartMenu
                         End If
                         AddHandler ab.MouseDown, AddressOf ShowOptions
                         ElseIf mode = 3 Then
-                            If UCase(Path.GetFileNameWithoutExtension(file)).Contains(UCase(SearchBox.Text)) Or UCase(SearchBox.Text).Contains(UCase(Path.GetFileNameWithoutExtension(file))) Then
-                            Dim appicon = AddIcon(file, 2)
-                            Dim appname = Path.GetFileNameWithoutExtension(file)
-                            Dim ab As New Button
-                            ab.BackColor = Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
-                            ab.FlatAppearance.BorderSize = 0
-                            ab.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-                            ab.Font = New System.Drawing.Font("Segoe UI", 12.25!)
-                            ab.ForeColor = System.Drawing.Color.White
-                            ab.Margin = New Padding(11)
-                            ab.Name = appname.ToString
-                            ab.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-                            ab.Size = New System.Drawing.Size(500, 50)
-                            ab.TabIndex = 0
-                            ab.Text = appname.ToString
-                            ab.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-                            ab.Text = ab.Text.PadLeft(ab.Text.Length + 5)
-                            ab.ImageAlign = ContentAlignment.MiddleLeft
-                            ab.UseVisualStyleBackColor = False
-                            ab.Visible = True
-                            ab.Image = appicon
-                            ab.FlatAppearance.BorderColor = Color.FromArgb(255, 20, 20, 20)
-                            ab.TextImageRelation = TextImageRelation.ImageBeforeText
-                            ab.Tag = Path.GetExtension(file)
-                            FlowLayoutPanel1.Controls.Add(ab)
-                            AddHandler ab.Click, AddressOf OpenFile
-                            If My.Settings.round_allapps_list = True Then
-                                roundthethingy(ab, 20)
+                        If UCase(Path.GetFileNameWithoutExtension(file)).Contains(UCase(SearchBox.Text)) Or UCase(SearchBox.Text).Contains(UCase(Path.GetFileNameWithoutExtension(file))) Then
+                            If UCase(Path.GetFileNameWithoutExtension(file)).StartsWith(UCase(SearchBox.Text)) Or UCase(Path.GetFileNameWithoutExtension(file)).Contains(UCase(" " & SearchBox.Text)) Then
+                                Dim appicon = AddIcon(file, 2)
+                                Dim appname = Path.GetFileNameWithoutExtension(file)
+                                Dim ab As New Button
+                                ab.BackColor = Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
+                                ab.FlatAppearance.BorderSize = 0
+                                ab.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+                                ab.Font = New System.Drawing.Font("Segoe UI", 12.25!)
+                                ab.ForeColor = System.Drawing.Color.White
+                                ab.Margin = New Padding(11)
+                                ab.Name = appname.ToString
+                                ab.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+                                ab.Size = New System.Drawing.Size(500, 50)
+                                ab.TabIndex = 0
+                                ab.Text = appname.ToString
+                                ab.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+                                ab.Text = ab.Text.PadLeft(ab.Text.Length + 5)
+                                ab.ImageAlign = ContentAlignment.MiddleLeft
+                                ab.UseVisualStyleBackColor = False
+                                ab.Visible = True
+                                ab.Image = appicon
+                                ab.FlatAppearance.BorderColor = Color.FromArgb(255, 20, 20, 20)
+                                ab.TextImageRelation = TextImageRelation.ImageBeforeText
+                                ab.Tag = Path.GetExtension(file)
+                                FlowLayoutPanel1.Controls.Add(ab)
+                                AddHandler ab.Click, AddressOf OpenFile
+                                If My.Settings.round_allapps_list = True Then
+                                    roundthethingy(ab, 20)
+                                End If
+                                AddHandler ab.MouseDown, AddressOf ShowOptions
                             End If
-                            AddHandler ab.MouseDown, AddressOf ShowOptions
                         End If
-                    End If
+                        End If
                 Next
             Catch ex As Exception
             End Try
@@ -470,15 +485,17 @@ Public Class StartMenu
 
     Private Sub ProfilePic_Click(sender As Object, e As EventArgs) Handles ProfilePic.Click
         Process.Start("ms-settings:yourinfo")
-        Close()
-        End
+
+        Timer3.Enabled = True
+        Timer3.Start()
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles SettingsBtn.Click
         IndexBar.Location = New Point(IndexBar.Location.X, sender.Location.Y + 7)
         Process.Start("ms-settings:")
-        Close()
-        End
+
+        Timer3.Enabled = True
+        Timer3.Start()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles TimelineBtn.Click
@@ -486,8 +503,8 @@ Public Class StartMenu
 
         objShell.WindowSwitcher
 
-        Close()
-        End
+        Timer3.Enabled = True
+        Timer3.Start()
     End Sub
 
     Private Sub PinnedBtn_Click(sender As Object, e As EventArgs) Handles PinnedBtn.Click

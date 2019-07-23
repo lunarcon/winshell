@@ -205,6 +205,17 @@ Namespace My
                 Me("transparent") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property CustomApps() As Global.System.Collections.Specialized.StringCollection
+            Get
+                Return CType(Me("CustomApps"),Global.System.Collections.Specialized.StringCollection)
+            End Get
+            Set
+                Me("CustomApps") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

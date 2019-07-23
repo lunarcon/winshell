@@ -45,20 +45,23 @@ Partial Class StartMenu
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Scrollthing = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.SearchBoxPadding.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.Panel4)
+        Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.ProfilePic)
         Me.Panel1.Controls.Add(Me.IndexBar)
         Me.Panel1.Controls.Add(Me.PinnedBtn)
@@ -71,6 +74,7 @@ Partial Class StartMenu
         Me.Panel1.Controls.Add(Me.Ico2)
         Me.Panel1.Controls.Add(Me.Ico3)
         Me.Panel1.Controls.Add(Me.Ico4)
+        Me.Panel1.Controls.Add(Me.Panel5)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 10)
@@ -99,6 +103,7 @@ Partial Class StartMenu
         'ProfilePic
         '
         Me.ProfilePic.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ProfilePic.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.ProfilePic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ProfilePic.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.ProfilePic.FlatAppearance.BorderSize = 0
@@ -115,12 +120,12 @@ Partial Class StartMenu
         Me.ProfilePic.Size = New System.Drawing.Size(100, 100)
         Me.ProfilePic.TabIndex = 13
         Me.ProfilePic.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.ProfilePic.UseVisualStyleBackColor = True
+        Me.ProfilePic.UseVisualStyleBackColor = False
         '
         'IndexBar
         '
         Me.IndexBar.BackColor = System.Drawing.SystemColors.Highlight
-        Me.IndexBar.Location = New System.Drawing.Point(0, 546)
+        Me.IndexBar.Location = New System.Drawing.Point(0, 543)
         Me.IndexBar.Name = "IndexBar"
         Me.IndexBar.Size = New System.Drawing.Size(4, 30)
         Me.IndexBar.TabIndex = 21
@@ -132,7 +137,7 @@ Partial Class StartMenu
         Me.PinnedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.PinnedBtn.Font = New System.Drawing.Font("Segoe UI", 12.25!)
         Me.PinnedBtn.ForeColor = System.Drawing.SystemColors.Control
-        Me.PinnedBtn.Location = New System.Drawing.Point(51, 539)
+        Me.PinnedBtn.Location = New System.Drawing.Point(51, 535)
         Me.PinnedBtn.Name = "PinnedBtn"
         Me.PinnedBtn.Size = New System.Drawing.Size(444, 45)
         Me.PinnedBtn.TabIndex = 20
@@ -251,7 +256,7 @@ Partial Class StartMenu
         Me.Ico1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Ico1.Font = New System.Drawing.Font("Segoe MDL2 Assets", 14.25!)
         Me.Ico1.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Ico1.Location = New System.Drawing.Point(12, 539)
+        Me.Ico1.Location = New System.Drawing.Point(12, 535)
         Me.Ico1.Name = "Ico1"
         Me.Ico1.Size = New System.Drawing.Size(41, 45)
         Me.Ico1.TabIndex = 23
@@ -351,14 +356,6 @@ Partial Class StartMenu
         Me.Panel3.Size = New System.Drawing.Size(583, 27)
         Me.Panel3.TabIndex = 3
         '
-        'Timer2
-        '
-        Me.Timer2.Interval = 10
-        '
-        'Timer3
-        '
-        Me.Timer3.Interval = 10
-        '
         'PictureBox1
         '
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
@@ -369,6 +366,34 @@ Partial Class StartMenu
         Me.PictureBox1.TabIndex = 29
         Me.PictureBox1.TabStop = False
         Me.PictureBox1.Visible = False
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 10
+        '
+        'Timer3
+        '
+        Me.Timer3.Interval = 10
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.Black
+        Me.Panel5.Controls.Add(Me.Panel6)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(498, 92)
+        Me.Panel5.TabIndex = 29
+        Me.Panel5.Visible = False
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel6.Location = New System.Drawing.Point(0, 73)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(498, 19)
+        Me.Panel6.TabIndex = 0
         '
         'StartMenu
         '
@@ -392,6 +417,7 @@ Partial Class StartMenu
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel5.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -421,4 +447,6 @@ Partial Class StartMenu
     Friend WithEvents Label1 As Label
     Friend WithEvents Scrollthing As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Panel6 As Panel
 End Class

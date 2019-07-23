@@ -83,5 +83,8 @@ tilecolor_corresp_color =&gt; list of tile colors of corresponding app
     <Setting Name="transparent" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="CustomApps" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>
