@@ -25,8 +25,8 @@ Partial Class StartMenu
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StartMenu))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.ProfilePic = New System.Windows.Forms.Button()
         Me.IndexBar = New System.Windows.Forms.Panel()
         Me.PinnedBtn = New System.Windows.Forms.Button()
@@ -45,21 +45,19 @@ Partial Class StartMenu
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Scrollthing = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.SearchBoxPadding.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Panel4)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.ProfilePic)
@@ -74,7 +72,6 @@ Partial Class StartMenu
         Me.Panel1.Controls.Add(Me.Ico2)
         Me.Panel1.Controls.Add(Me.Ico3)
         Me.Panel1.Controls.Add(Me.Ico4)
-        Me.Panel1.Controls.Add(Me.Panel5)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 10)
@@ -82,6 +79,13 @@ Partial Class StartMenu
         Me.Panel1.Padding = New System.Windows.Forms.Padding(0, 0, 0, 40)
         Me.Panel1.Size = New System.Drawing.Size(498, 725)
         Me.Panel1.TabIndex = 0
+        '
+        'Panel4
+        '
+        Me.Panel4.Location = New System.Drawing.Point(485, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(13, 725)
+        Me.Panel4.TabIndex = 27
         '
         'Label1
         '
@@ -92,13 +96,6 @@ Partial Class StartMenu
         Me.Label1.Size = New System.Drawing.Size(398, 189)
         Me.Label1.TabIndex = 28
         Me.Label1.Text = resources.GetString("Label1.Text")
-        '
-        'Panel4
-        '
-        Me.Panel4.Location = New System.Drawing.Point(485, 0)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(13, 725)
-        Me.Panel4.TabIndex = 27
         '
         'ProfilePic
         '
@@ -192,7 +189,7 @@ Partial Class StartMenu
         '
         'SearchBoxPadding
         '
-        Me.SearchBoxPadding.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
+        Me.SearchBoxPadding.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.SearchBoxPadding.Controls.Add(Me.SearchBtn)
         Me.SearchBoxPadding.Controls.Add(Me.SearchBox)
         Me.SearchBoxPadding.Location = New System.Drawing.Point(51, 211)
@@ -219,7 +216,7 @@ Partial Class StartMenu
         '
         'SearchBox
         '
-        Me.SearchBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
+        Me.SearchBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer), CType(CType(20, Byte), Integer))
         Me.SearchBox.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.SearchBox.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SearchBox.Font = New System.Drawing.Font("Segoe UI", 13.25!)
@@ -356,6 +353,14 @@ Partial Class StartMenu
         Me.Panel3.Size = New System.Drawing.Size(583, 27)
         Me.Panel3.TabIndex = 3
         '
+        'Timer2
+        '
+        Me.Timer2.Interval = 10
+        '
+        'Timer3
+        '
+        Me.Timer3.Interval = 10
+        '
         'PictureBox1
         '
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
@@ -367,39 +372,11 @@ Partial Class StartMenu
         Me.PictureBox1.TabStop = False
         Me.PictureBox1.Visible = False
         '
-        'Timer2
-        '
-        Me.Timer2.Interval = 10
-        '
-        'Timer3
-        '
-        Me.Timer3.Interval = 10
-        '
-        'Panel5
-        '
-        Me.Panel5.BackColor = System.Drawing.Color.Black
-        Me.Panel5.Controls.Add(Me.Panel6)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel5.Location = New System.Drawing.Point(0, 0)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(498, 92)
-        Me.Panel5.TabIndex = 29
-        Me.Panel5.Visible = False
-        '
-        'Panel6
-        '
-        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel6.Location = New System.Drawing.Point(0, 73)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(498, 19)
-        Me.Panel6.TabIndex = 0
-        '
         'StartMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1081, 725)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.FlowLayoutPanel1)
@@ -417,7 +394,6 @@ Partial Class StartMenu
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel5.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -447,6 +423,4 @@ Partial Class StartMenu
     Friend WithEvents Label1 As Label
     Friend WithEvents Scrollthing As Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents Panel6 As Panel
 End Class

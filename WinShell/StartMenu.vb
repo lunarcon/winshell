@@ -34,6 +34,9 @@ Public Class StartMenu
     End Property
 
     Private Sub StartMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        roundthethingy(Me, 20)
+        Backfrm.Show()
+
         If My.Settings.start_in_non_tile_mode = True Then
             Panel4.Visible = False
             Panel2.Visible = False
@@ -65,7 +68,7 @@ Public Class StartMenu
         Else
             greet = "night"
         End If
-        roundthethingy(Me, 20)
+
         roundthethingy(SearchBoxPadding, 12)
         Populate(pinnedapps, FlowLayoutPanel1, 1)
         bmp.BackgroundImage = GetUserTile(My.User.Name.ToString)
@@ -128,19 +131,7 @@ Public Class StartMenu
         Me.Controls.Add(at)
         AddHandler pin.Click, AddressOf pinunpin
         roundthethingy(at, 10)
-        If My.Settings.show_pfp_outside_form = True And My.Settings.start_in_non_tile_mode = True Then
-            Panel5.Visible = True
-            TransparencyKey = Color.Black
-            Dim p As New Drawing2D.GraphicsPath()
-            p.StartFigure()
-            p.AddArc(New Rectangle(0, 0, 20, 20), 180, 90)
-            p.AddLine(20, 0, Panel6.Width - 20, 0)
-            p.AddArc(New Rectangle(Panel6.Width - 20, 0, 20, 20), -90, 90)
-            p.AddLine(Panel6.Width, 0, Panel6.Width, Panel6.Height)
-            p.AddLine(Panel6.Width, Panel6.Height, 0, Panel6.Height)
-            p.CloseFigure()
-            Panel6.Region = New Region(p)
-        End If
+
     End Sub
 
     Private Sub ShowOptions(sender As Object, e As System.Windows.Forms.MouseEventArgs)
@@ -314,7 +305,7 @@ Public Class StartMenu
                         ab.FlatStyle = System.Windows.Forms.FlatStyle.Flat
                         ab.Font = New System.Drawing.Font("Segoe UI", 10.25!)
                         ab.ForeColor = System.Drawing.Color.White
-                        ab.Margin = New Padding(11)
+                        ab.Margin = New Padding(13)
                         ab.Name = appname.ToString
                         ab.Padding = New System.Windows.Forms.Padding(0, 0, 0, 5)
                         ab.Size = New System.Drawing.Size(145, 145)
@@ -361,7 +352,7 @@ Public Class StartMenu
                             roundthethingy(ab, 20)
                         End If
                         AddHandler ab.MouseDown, AddressOf ShowOptions
-                        ElseIf mode = 3 Then
+                    ElseIf mode = 3 Then
                         If UCase(Path.GetFileNameWithoutExtension(file)).Contains(UCase(SearchBox.Text)) Or UCase(SearchBox.Text).Contains(UCase(Path.GetFileNameWithoutExtension(file))) Then
                             If UCase(Path.GetFileNameWithoutExtension(file)).StartsWith(UCase(SearchBox.Text)) Or UCase(Path.GetFileNameWithoutExtension(file)).Contains(UCase(" " & SearchBox.Text)) Then
                                 Dim appicon = AddIcon(file, 2)
@@ -395,7 +386,7 @@ Public Class StartMenu
                                 AddHandler ab.MouseDown, AddressOf ShowOptions
                             End If
                         End If
-                        End If
+                    End If
                 Next
             Catch ex As Exception
             End Try
@@ -524,7 +515,7 @@ Public Class StartMenu
         Dim oRAngle As Rectangle = New Rectangle(0, 0, TheControl.Width, TheControl.Height)
         Dim oGradientBrush As Brush = New LinearGradientBrush(
                                       oRAngle, Color.Transparent,
-                                      Color.FromArgb(255, 10, 10, 10),
+                                      Color.FromArgb(200, 10, 10, 10),
                                       Drawing.Drawing2D _
                                       .LinearGradientMode.Horizontal)
         e.Graphics.FillRectangle(oGradientBrush, oRAngle)
@@ -559,12 +550,14 @@ Public Class StartMenu
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         Opacity += 0.08
-        If Opacity >= 0.94 Then
+        Backfrm.Opacity += 0.08
+        If Opacity >= 0.9 Then
             Timer2.Stop()
             'Timer3.Enabled = True
             'Timer3.Start()
             Timer2.Enabled = False
-            Opacity = 0.92
+            Opacity = 0.88
+            Backfrm.Opacity = 1
         End If
 
     End Sub
@@ -573,6 +566,7 @@ Public Class StartMenu
         Timer2.Enabled = False
         Timer2.Stop()
         Opacity -= 0.08
+        Backfrm.Opacity -= 0.08
         If Opacity <= 0.1 Then
             Timer3.Enabled = False
             Timer3.Stop()
@@ -594,5 +588,8 @@ Public Class StartMenu
             Next
         End If
     End Sub
+
+
+
 End Class
 

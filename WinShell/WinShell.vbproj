@@ -78,6 +78,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Backfrm.Designer.vb">
+      <DependentUpon>Backfrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Backfrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="OutPfp.Designer.vb">
       <DependentUpon>OutPfp.vb</DependentUpon>
     </Compile>
@@ -133,6 +139,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Backfrm.resx">
+      <DependentUpon>Backfrm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OutPfp.resx">
       <DependentUpon>OutPfp.vb</DependentUpon>
     </EmbeddedResource>
