@@ -9,7 +9,7 @@ Imports System.Windows.Threading
 Imports System.Windows.Forms
 Imports IWshRuntimeLibrary
 Imports System.Windows.Interop
-
+Imports System.Windows.Shell
 
 Public Class StartMenu
 
@@ -84,6 +84,7 @@ Public Class StartMenu
             SearchBoxPadding.Location = New Point(SearchBoxPadding.Location.X, SearchBoxPadding.Location.Y - 70)
             Label1.Text = "This is an experimental feature and hence has a lot of bugs. Currently for testing purposes only. If you wish to continue using the app normally, set the flag you changed to its default value."
         End If
+
         UserGreet.Text = "Good " & greet & ", " & GetUserName()
         roundthethingy(ProfilePic, 100)
         roundthethingy(SearchBtn, 25)
@@ -209,6 +210,9 @@ Public Class StartMenu
             SearchBox.Text = "Search"
             ActiveControl = Nothing
         End If
+    End Sub
+    Private Sub createjlist()
+
     End Sub
     Private Sub RoundPic(pic As Control)
         Dim originalImage = pic.BackgroundImage

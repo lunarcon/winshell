@@ -45,9 +45,9 @@ Partial Class StartMenu
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Scrollthing = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.SearchBoxPadding.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -353,14 +353,6 @@ Partial Class StartMenu
         Me.Panel3.Size = New System.Drawing.Size(583, 27)
         Me.Panel3.TabIndex = 3
         '
-        'Timer2
-        '
-        Me.Timer2.Interval = 10
-        '
-        'Timer3
-        '
-        Me.Timer3.Interval = 10
-        '
         'PictureBox1
         '
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Right
@@ -371,6 +363,14 @@ Partial Class StartMenu
         Me.PictureBox1.TabIndex = 29
         Me.PictureBox1.TabStop = False
         Me.PictureBox1.Visible = False
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 10
+        '
+        'Timer3
+        '
+        Me.Timer3.Interval = 10
         '
         'StartMenu
         '
