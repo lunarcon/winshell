@@ -434,8 +434,6 @@ Public Class StartMenu
         Next
     End Sub
 
-
-
     Private Function AddIcon(fname As String, mode As Integer)
         Dim size
         If mode = 1 Then
