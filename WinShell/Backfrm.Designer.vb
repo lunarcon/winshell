@@ -34,6 +34,7 @@ Partial Class Backfrm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Backfrm"
         Me.Opacity = 0R
+        Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Backfrm"

@@ -603,12 +603,11 @@ Public Class StartMenu
         End If
     End Sub
 
-    Private Sub StartMenu_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
-
-    End Sub
-
-    Private Sub StartMenu_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
-
+    Private Sub StartMenu_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
+        If Timer2.Enabled = False And Opacity = 0.88 Then
+            Timer3.Enabled = True
+            Timer3.Start()
+        End If
     End Sub
 End Class
 
