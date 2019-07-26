@@ -14,6 +14,7 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -30,7 +31,6 @@
     <SuiteName>winshell</SuiteName>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -115,12 +115,6 @@
     <Compile Include="Placeholder.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RTClickThing.Designer.vb">
-      <DependentUpon>RTClickThing.vb</DependentUpon>
-    </Compile>
-    <Compile Include="RTClickThing.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="StartMenu.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -150,12 +144,6 @@
     <Compile Include="Shell\RECT.vb" />
     <Compile Include="Shell\ShellEx.vb" />
     <Compile Include="Shell\SHFILEINFO.vb" />
-    <Compile Include="Taskbar.Designer.vb">
-      <DependentUpon>Taskbar.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Taskbar.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Backfrm.resx">
@@ -167,9 +155,6 @@
     <EmbeddedResource Include="Placeholder.resx">
       <DependentUpon>Placeholder.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RTClickThing.resx">
-      <DependentUpon>RTClickThing.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="StartMenu.resx">
       <DependentUpon>StartMenu.vb</DependentUpon>
     </EmbeddedResource>
@@ -178,9 +163,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Taskbar.resx">
-      <DependentUpon>Taskbar.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -10,10 +10,12 @@ Public Class Backfrm
         Get
             Const CS_DROPSHADOW As Integer = &H20000
             Dim cp As CreateParams = MyBase.CreateParams
+            cp.ExStyle = cp.ExStyle Or &H80
             cp.ClassStyle = cp.ClassStyle Or CS_DROPSHADOW
             Return cp
         End Get
     End Property
+
     Private Sub roundthethingy(oj As Object, rad As Integer)
         Location = StartMenu.Location
         Dim p As New Drawing2D.GraphicsPath()

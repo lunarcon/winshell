@@ -40,6 +40,7 @@ Public Class StartMenu
         Get
             Const CS_DROPSHADOW As Integer = &H20000
             Dim cp As CreateParams = MyBase.CreateParams
+            cp.ExStyle = cp.ExStyle Or &H80
             cp.ClassStyle = cp.ClassStyle Or CS_DROPSHADOW
             Return cp
         End Get

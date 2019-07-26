@@ -385,6 +385,8 @@ Partial Class StartMenu
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "StartMenu"
         Me.Opacity = 0R
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.TopMost = True
