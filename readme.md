@@ -3,6 +3,8 @@
 My attempt at a shell/ux replacement for windows... IN VB!!
 May provide a windows 10-esqe ux to older windows versions.
 
+#### Note: At this point, it is basically just a working start menu, nothing too much other than that
+
 ## What's New:
 
 ###  - The app now follows the System Accent Color.
