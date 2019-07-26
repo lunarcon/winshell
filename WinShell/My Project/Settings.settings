@@ -86,5 +86,8 @@ tilecolor_corresp_color =&gt; list of tile colors of corresponding app
     <Setting Name="CustomApps" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="ThemeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">5, 100, 155</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -216,6 +216,18 @@ Namespace My
                 Me("CustomApps") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("5, 100, 155")>  _
+        Public Property ThemeColor() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("ThemeColor"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("ThemeColor") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

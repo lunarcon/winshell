@@ -21,6 +21,19 @@ Public Class StartMenu
     Dim bmp As New PictureBox
     Dim objShell = CreateObject("Shell.Application")
 
+    Dim colorSystemAccent As UInteger = GetImmersiveColorFromColorSetEx(GetImmersiveUserColorSetPreference(False, False), GetImmersiveColorTypeFromName(Marshal.StringToHGlobalUni("ImmersiveSystemAccent")), False, 0)
+    Dim colorAccent As System.Drawing.Color = System.Drawing.Color.FromArgb((&HFF000000 And colorSystemAccent) >> 24, &HFF And colorSystemAccent, (&HFF00 And colorSystemAccent) >> 8, (&HFF0000 And colorSystemAccent) >> 16)
+    ' test back color
+
+    <DllImport("Uxtheme.dll", SetLastError:=True, CharSet:=CharSet.Auto, EntryPoint:="#95")>
+    Public Shared Function GetImmersiveColorFromColorSetEx(ByVal dwImmersiveColorSet As UInteger, ByVal dwImmersiveColorType As UInteger, ByVal bIgnoreHighContrast As Boolean, ByVal dwHighContrastCacheMode As UInteger) As UInteger
+    End Function
+    <DllImport("Uxtheme.dll", SetLastError:=True, CharSet:=CharSet.Auto, EntryPoint:="#96")>
+    Public Shared Function GetImmersiveColorTypeFromName(ByVal pName As IntPtr) As UInteger
+    End Function
+    <DllImport("Uxtheme.dll", SetLastError:=True, CharSet:=CharSet.Auto, EntryPoint:="#98")>
+    Public Shared Function GetImmersiveUserColorSetPreference(ByVal bForceCheckRegistry As Boolean, ByVal bSkipCheckOnFail As Boolean) As UInteger
+    End Function
     Private Sub editoptopen(sender As Object, e As EventArgs)
 
     End Sub
@@ -36,7 +49,7 @@ Public Class StartMenu
     Private Sub StartMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         roundthethingy(Me, 20)
         Backfrm.Show()
-
+        My.Settings.ThemeColor = colorAccent
         If My.Settings.start_in_non_tile_mode = True Then
             Panel4.Visible = False
             Panel2.Visible = False
@@ -132,7 +145,7 @@ Public Class StartMenu
         Me.Controls.Add(at)
         AddHandler pin.Click, AddressOf pinunpin
         roundthethingy(at, 10)
-
+        IndexBar.BackColor = My.Settings.ThemeColor
     End Sub
 
     Private Sub ShowOptions(sender As Object, e As System.Windows.Forms.MouseEventArgs)
@@ -304,7 +317,7 @@ Public Class StartMenu
                         Dim appicon = AddIcon(file, 1)
                         Dim appname = Path.GetFileNameWithoutExtension(file)
                         Dim ab As New Button
-                        ab.BackColor = Color.FromArgb(CType(CType(5, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(155, Byte), Integer))
+                        ab.BackColor = My.Settings.ThemeColor
                         ab.FlatAppearance.BorderSize = 0
                         ab.FlatStyle = System.Windows.Forms.FlatStyle.Flat
                         ab.Font = New System.Drawing.Font("Segoe UI", 10.25!)
@@ -590,8 +603,6 @@ Public Class StartMenu
             Next
         End If
     End Sub
-
-
 
 End Class
 
