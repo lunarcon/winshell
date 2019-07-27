@@ -146,6 +146,7 @@ Public Class StartMenu
         AddHandler pin.Click, AddressOf pinunpin
         roundthethingy(at, 10)
         IndexBar.BackColor = My.Settings.ThemeColor
+
     End Sub
 
     Private Sub ShowOptions(sender As Object, e As System.Windows.Forms.MouseEventArgs)
@@ -339,7 +340,7 @@ Public Class StartMenu
                         AddHandler ab.Click, AddressOf OpenFile
                         roundthethingy(ab, 10)
                         AddHandler ab.MouseDown, AddressOf ShowOptions
-                    ElseIf mode = 2 Then
+                    ElseIf mode = 2 And Path.GetFileNameWithoutExtension(file).Contains("desktop") = False Then
                         Dim appicon = AddIcon(file, 2)
                         Dim appname = Path.GetFileNameWithoutExtension(file)
                         Dim ab As New Button
@@ -369,7 +370,7 @@ Public Class StartMenu
                             roundthethingy(ab, 20)
                         End If
                         AddHandler ab.MouseDown, AddressOf ShowOptions
-                    ElseIf mode = 3 Then
+                    ElseIf mode = 3 And Path.GetFileNameWithoutExtension(file).Contains("desktop") = False Then
                         If UCase(Path.GetFileNameWithoutExtension(file)).Contains(UCase(SearchBox.Text)) Or UCase(SearchBox.Text).Contains(UCase(Path.GetFileNameWithoutExtension(file))) Then
                             If UCase(Path.GetFileNameWithoutExtension(file)).StartsWith(UCase(SearchBox.Text)) Or UCase(Path.GetFileNameWithoutExtension(file)).Contains(UCase(" " & SearchBox.Text)) Then
                                 Dim appicon = AddIcon(file, 2)

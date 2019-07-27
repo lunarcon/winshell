@@ -31,6 +31,7 @@ Partial Class Backfrm
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1081, 725)
         Me.ControlBox = False
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Backfrm"
         Me.Opacity = 0R

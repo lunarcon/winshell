@@ -81,6 +81,9 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="Win8ProgressRing">
+      <HintPath>..\..\Explorer\Explorer\Win8ProgressRing.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +116,12 @@
       <DependentUpon>Placeholder.vb</DependentUpon>
     </Compile>
     <Compile Include="Placeholder.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecentActivities.Designer.vb">
+      <DependentUpon>RecentActivities.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RecentActivities.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StartMenu.vb">
@@ -154,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Placeholder.resx">
       <DependentUpon>Placeholder.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecentActivities.resx">
+      <DependentUpon>RecentActivities.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartMenu.resx">
       <DependentUpon>StartMenu.vb</DependentUpon>
@@ -205,6 +217,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictureaaaaa1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
