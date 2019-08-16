@@ -13,6 +13,7 @@ Imports System.Windows.Shell
 
 
 
+
 Public Class StartMenu
 
     Dim sdr As Control
@@ -38,12 +39,7 @@ Public Class StartMenu
     Private Sub editoptopen(sender As Object, e As EventArgs)
 
     End Sub
-    Private Shared Sub Main(ByVal args As String())
-        Dim settings = New UISettings()
-        Dim foreground = settings.GetColorValue(UIColorType.Foreground)
-        Dim background = settings.GetColorValue(UIColorType.Background)
-        Console.WriteLine($"Foreground {foreground} Background {background}")
-    End Sub
+
     Protected Overrides ReadOnly Property CreateParams As CreateParams
         Get
             Const CS_DROPSHADOW As Integer = &H20000
@@ -55,6 +51,13 @@ Public Class StartMenu
     End Property
 
     Private Sub StartMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim readValue = My.Computer.Registry.GetValue(
+            "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize", "SystemUsesLightTheme", Nothing)
+        If Val(readValue) = 0 Then
+            My.Settings.Dark = True
+        Else
+            My.Settings.Dark = False
+        End If
         If My.Settings.Dark = False Then
             For Each c As Control In Me.Controls
                 c.BackColor = Color.FromArgb(255, 255 - c.BackColor.R, 255 - c.BackColor.G, 255 - c.BackColor.B)
