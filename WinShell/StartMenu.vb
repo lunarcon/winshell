@@ -11,6 +11,8 @@ Imports IWshRuntimeLibrary
 Imports System.Windows.Interop
 Imports System.Windows.Shell
 
+
+
 Public Class StartMenu
 
     Dim sdr As Control
@@ -36,6 +38,12 @@ Public Class StartMenu
     Private Sub editoptopen(sender As Object, e As EventArgs)
 
     End Sub
+    Private Shared Sub Main(ByVal args As String())
+        Dim settings = New UISettings()
+        Dim foreground = settings.GetColorValue(UIColorType.Foreground)
+        Dim background = settings.GetColorValue(UIColorType.Background)
+        Console.WriteLine($"Foreground {foreground} Background {background}")
+    End Sub
     Protected Overrides ReadOnly Property CreateParams As CreateParams
         Get
             Const CS_DROPSHADOW As Integer = &H20000
@@ -47,6 +55,16 @@ Public Class StartMenu
     End Property
 
     Private Sub StartMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If My.Settings.Dark = False Then
+            For Each c As Control In Me.Controls
+                c.BackColor = Color.FromArgb(255, 255 - c.BackColor.R, 255 - c.BackColor.G, 255 - c.BackColor.B)
+                c.ForeColor = Color.FromArgb(255, 255 - c.ForeColor.R, 255 - c.ForeColor.G, 255 - c.ForeColor.B)
+            Next
+            For Each c As Control In Panel1.Controls
+                c.ForeColor = Color.FromArgb(255, 255 - c.ForeColor.R, 255 - c.ForeColor.G, 255 - c.ForeColor.B)
+            Next
+            ProfilePic.ForeColor = Color.FromArgb(255, 200, 200, 200)
+        End If
         roundthethingy(Me, 20)
         Backfrm.Show()
         My.Settings.ThemeColor = colorAccent
@@ -146,10 +164,12 @@ Public Class StartMenu
         AddHandler pin.Click, AddressOf pinunpin
         roundthethingy(at, 10)
         IndexBar.BackColor = My.Settings.ThemeColor
-
     End Sub
 
+
+
     Private Sub ShowOptions(sender As Object, e As System.Windows.Forms.MouseEventArgs)
+
         Dim h = Controls.Find("CTMENUPANEL", 1)
         For Each ll As Control In h
             If e.Button = MouseButtons.Right And ll.Tag = "" Then
@@ -527,14 +547,25 @@ Public Class StartMenu
 
 
     Private Sub Panel4_Paint(sender As Object, e As PaintEventArgs) Handles Panel4.Paint
-        Dim TheControl As Control = CType(sender, Control)
-        Dim oRAngle As Rectangle = New Rectangle(0, 0, TheControl.Width, TheControl.Height)
-        Dim oGradientBrush As Brush = New LinearGradientBrush(
+        If My.Settings.Dark = True Then
+            Dim TheControl As Control = CType(sender, Control)
+            Dim oRAngle As Rectangle = New Rectangle(0, 0, TheControl.Width, TheControl.Height)
+            Dim oGradientBrush As Brush = New LinearGradientBrush(
                                       oRAngle, Color.Transparent,
                                       Color.FromArgb(200, 10, 10, 10),
                                       Drawing.Drawing2D _
                                       .LinearGradientMode.Horizontal)
-        e.Graphics.FillRectangle(oGradientBrush, oRAngle)
+            e.Graphics.FillRectangle(oGradientBrush, oRAngle)
+        Else
+            Dim TheControl As Control = CType(sender, Control)
+            Dim oRAngle As Rectangle = New Rectangle(0, 0, TheControl.Width, TheControl.Height)
+            Dim oGradientBrush As Brush = New LinearGradientBrush(
+                                      oRAngle, Color.Transparent,
+                                      Color.FromArgb(200, 150, 150, 150),
+                                      Drawing.Drawing2D _
+                                      .LinearGradientMode.Horizontal)
+            e.Graphics.FillRectangle(oGradientBrush, oRAngle)
+        End If
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles SearchBox.TextChanged
@@ -610,6 +641,10 @@ Public Class StartMenu
             Timer3.Enabled = True
             Timer3.Start()
         End If
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
     End Sub
 End Class
 

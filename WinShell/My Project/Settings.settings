@@ -89,5 +89,8 @@ tilecolor_corresp_color =&gt; list of tile colors of corresponding app
     <Setting Name="ThemeColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">5, 100, 155</Value>
     </Setting>
+    <Setting Name="Dark" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
