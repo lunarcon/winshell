@@ -13,10 +13,7 @@ May provide a windows 10-esqe ux to older windows versions.
 ###  - Minor UI Tweaks
 ###  - Added a Light theme, now follows system theme automatically
 
-image:: https://github.com/at-adityavikram/winshell/tree/master/WinShell/Resources/dark.jpg
-  :height: 100px
-  :width: 200 px
-  :scale: 50 %
+https://github.com/at-adityavikram/winshell/tree/master/WinShell/Resources/dark.jpg
   
  - Now shows proper start menu behaviour - like closing when deactivated.
 
