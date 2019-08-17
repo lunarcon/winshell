@@ -19,7 +19,7 @@ May provide a windows 10-esqe ux to older windows versions.
 
 ###  - Can now pin and unpin tiles.
 <p align="center">
-  <img src="WinShell/Resources/menu.jpg" width="400"><img src="WinShell/Resources/menu2.jpg" width="400">
+  <img src="WinShell/Resources/menu.jpg" width="300"> <img src="WinShell/Resources/menu2.jpg" width="400">
 </p>
 
 ###  - Minor UI Tweaks
