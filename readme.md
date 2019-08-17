@@ -22,12 +22,13 @@ May provide a windows 10-esqe ux to older windows versions.
   <img src="WinShell/Resources/menu.jpg" width="300"> &nbsp;&nbsp;&nbsp; <img src="WinShell/Resources/menu2.jpg" width="400">
 </p>
 
-###  - Minor UI Tweaks
-###  - Added a Light theme, now follows system theme automatically
+###  - Added a Light theme, now follows system theme automatically (Incomplete)
 <p align="center">
   <img src="WinShell/Resources/light.jpg" width="600">
 </p>
 
+
+###  - Minor UI Tweaks
  - Now shows proper start menu behaviour - like closing when deactivated.
 
  - Bugfixes, 
