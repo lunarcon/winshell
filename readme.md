@@ -1,7 +1,7 @@
 # Winshell
 
 <p align="center">
-  <img src="WinShell/Resources/dark.jpg" width="800">
+  <img src="WinShell/Resources/dark.jpg" width="900">
 </p>
 
 My attempt at a shell/ux replacement for windows... IN VB!!
