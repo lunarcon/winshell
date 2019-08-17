@@ -1,5 +1,9 @@
 # Winshell
 
+<p align="center">
+  <img src="Resources/dark.jpg" width="350" title="hover text">
+</p>
+
 My attempt at a shell/ux replacement for windows... IN VB!!
 May provide a windows 10-esqe ux to older windows versions.
 
@@ -12,8 +16,6 @@ May provide a windows 10-esqe ux to older windows versions.
 ###  - Can now pin and unpin tiles.
 ###  - Minor UI Tweaks
 ###  - Added a Light theme, now follows system theme automatically
-
-https://github.com/at-adityavikram/winshell/tree/master/WinShell/Resources/dark.jpg
   
  - Now shows proper start menu behaviour - like closing when deactivated.
 
