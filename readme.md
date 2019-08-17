@@ -43,4 +43,4 @@ Some experimental Fatures added. to enable them, you need to change the flags ac
 
 ### Acknowlwdgements
  The design of the start menu is based to some extent on a design by Michael West on twitter. I decided to make a working win32 version,
- taking up the challenge of making good looking apps in VB just for fun. Suggestions/help/feedback is welcome.
+ taking up the challenge of making decently good looking apps in VB just for fun. Suggestions/help/feedback is welcome.
