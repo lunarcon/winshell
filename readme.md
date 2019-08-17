@@ -1,7 +1,7 @@
 # Winshell
 
 <p align="center">
-  <img src="Resources/dark.jpg" width="350" title="hover text">
+  <img src="WinShell/Resources/dark.jpg" width="350">
 </p>
 
 My attempt at a shell/ux replacement for windows... IN VB!!
