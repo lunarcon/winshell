@@ -12,9 +12,13 @@ May provide a windows 10-esqe ux to older windows versions.
 ## What's New:
 
 ###  - The app now follows the System Accent Color.
+
 <p>
+  
 ###  - Fluent-like blurring behind the app.  <img src="WinShell/Resources/blur.jpg" width="200">
+
 </p>
+
 ###  - Can now pin and unpin tiles.
 ###  - Minor UI Tweaks
 ###  - Added a Light theme, now follows system theme automatically
