@@ -11,7 +11,13 @@ May provide a windows 10-esqe ux to older windows versions.
 ###  - Fluent-like blurring behind the app.
 ###  - Can now pin and unpin tiles.
 ###  - Minor UI Tweaks
+###  - Added a Light theme, now follows system theme automatically
 
+image:: https://github.com/at-adityavikram/winshell/master/
+  :height: 100px
+  :width: 200 px
+  :scale: 50 %
+  
  - Now shows proper start menu behaviour - like closing when deactivated.
 
  - Bugfixes, 
