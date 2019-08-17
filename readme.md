@@ -16,7 +16,10 @@ May provide a windows 10-esqe ux to older windows versions.
 ###  - Can now pin and unpin tiles.
 ###  - Minor UI Tweaks
 ###  - Added a Light theme, now follows system theme automatically
-  
+<p align="center">
+  <img src="WinShell/Resources/light.jpg" width="400">
+</p>
+
  - Now shows proper start menu behaviour - like closing when deactivated.
 
  - Bugfixes, 
