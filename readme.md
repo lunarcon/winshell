@@ -33,3 +33,12 @@ May provide a windows 10-esqe ux to older windows versions.
 
  - Bugfixes, 
 Some experimental Fatures added. to enable them, you need to change the flags accordingly in WinShell.exe.config
+
+### Bugs
+  - It may take around 15 seconds to load all apps if there are too many apps.
+  - Tiles may jitter when right clicked
+  - Light theme is incomplete
+  - Search may work slower than expected when searching in a large number of apps
+
+### Acknowlwdgements
+   The design of the start menu is based on a design by Michael West on twitter. Since it was UWP based, i decided to make a working    win32 version.
