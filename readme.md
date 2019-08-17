@@ -22,10 +22,11 @@ May provide a windows 10-esqe ux to older windows versions.
   <img src="WinShell/Resources/menu.jpg" width="300"> &nbsp;&nbsp;&nbsp; <img src="WinShell/Resources/menu2.jpg" width="400">
 </p>
 
-###  - Added a Light theme, now follows system theme automatically (Incomplete)
+###  - Added a Light theme, automatically switches based on system theme
 <p align="center">
   <img src="WinShell/Resources/light.jpg" width="600">
 </p>
+This is incomplete, so there are still some regions and controls with the wrong color
 
 
 ###  - Minor UI Tweaks
@@ -41,4 +42,5 @@ Some experimental Fatures added. to enable them, you need to change the flags ac
   - Search may work slower than expected when searching in a large number of apps
 
 ### Acknowlwdgements
-   The design of the start menu is based on a design by Michael West on twitter. Since it was UWP based, i decided to make a working    win32 version.
+ The design of the start menu is based to some extent on a design by Michael West on twitter. I decided to make a working win32 version,
+ taking the challenge of making good looking apps in VB just for fun.
