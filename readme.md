@@ -1,4 +1,5 @@
-# Winshell - (Now Obsolete)
+# Winshell
+Note: This version now obsolete and no longer updated. The latest version was renamed to 'Alberio', and is available at https://github.com/at-adityavikram/albireo
 
 <p align="center">
   <img src="WinShell/Resources/dark.jpg" width="900">
