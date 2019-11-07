@@ -1,4 +1,4 @@
-# Winshell
+# Winshell - (Now Obsolete)
 
 <p align="center">
   <img src="WinShell/Resources/dark.jpg" width="900">
